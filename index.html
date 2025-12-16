@@ -4,12 +4,16 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Landing Page Profesional</title>
+    <title>Paloma Nails - Estudio de Uñas</title>
     <meta name="description"
-        content="Diseño y desarrollo de landing pages modernas, rápidas y efectivas para potenciar tu marca.">
+        content="Estudio de uñas especializado en manicure rusa, soft gel y nail art en tonos pasteles. Diseño elegante y cuidado para tus manos.">
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/styles.css">
@@ -20,7 +24,7 @@
     <!-- NAV -->
     <header class="navbar">
         <div class="container nav-content">
-            <span class="logo">Aline.dev</span>
+            <a href="#" class="logo">Paloma Nails</a>
 
             <button class="nav-toggle" aria-label="Abrir menú">
                 ☰
@@ -28,8 +32,8 @@
 
             <nav class="nav-menu">
                 <a href="#servicios">Servicios</a>
-                <a href="#proceso">Proceso</a>
-                <a href="#contacto" class="btn btn-primary">Contacto</a>
+                <a href="#galeria">Galería</a>
+                <a href="#contacto" class="btn btn-primary">Reservar Cita</a>
             </nav>
         </div>
     </header>
@@ -37,15 +41,15 @@
     <!-- HERO -->
     <section class="hero">
         <div class="container hero-content animate">
-            <h1>Landing pages modernas que convierten</h1>
+            <h1>Arte y cuidado para tus manos</h1>
             <p>
-                Diseño y desarrollo landing pages rápidas, elegantes y enfocadas en resultados.
-                Pensadas para marcas, servicios y proyectos reales.
+                Especialistas en Soft Gel, Manicure Rusa y Diseños a mano alzada.
+                Un espacio donde el estilo y la delicadeza se encuentran.
             </p>
 
             <div class="hero-actions">
-                <a href="#contacto" class="btn btn-primary">Quiero mi landing</a>
-                <a href="#servicios" class="btn btn-secondary">Ver servicios</a>
+                <a href="#contacto" class="btn btn-primary">Agendar Cita</a>
+                <a href="#servicios" class="btn btn-secondary">Ver Servicios</a>
             </div>
         </div>
     </section>
@@ -53,76 +57,93 @@
     <!-- SERVICIOS -->
     <section id="servicios" class="section">
         <div class="container">
-            <h2 class="section-title animate">Qué puedo crear para ti</h2>
+            <h2 class="section-title animate">Mis Servicios</h2>
 
             <div class="grid-3">
-                <div class="card animate">
-                    <div class="icon">⚡</div>
-                    <h3>Landing Pages</h3>
-                    <p>Diseñadas para captar clientes, mostrar servicios o lanzar ideas.</p>
+                <div class="service-card animate">
+                    <div class="service-icon">💅</div>
+                    <h3>Soft Gel Tips</h3>
+                    <p>Extensiones completas de gel que cuidan tu uña natural. Duración 3-4 semanas con acabado
+                        perfecto.</p>
                 </div>
 
-                <div class="card animate">
-                    <div class="icon">🎨</div>
-                    <h3>Diseño UI</h3>
-                    <p>Interfaces limpias, modernas y adaptadas a tu identidad.</p>
+                <div class="service-card animate">
+                    <div class="service-icon">✨</div>
+                    <h3>Manicure Rusa</h3>
+                    <p>Limpieza profunda de cutículas para un esmaltado bajo cutícula impecable y duradero.</p>
                 </div>
 
-                <div class="card animate">
-                    <div class="icon">📱</div>
-                    <h3>Responsive</h3>
-                    <p>Perfectas en celular, tablet y computador.</p>
+                <div class="service-card animate">
+                    <div class="service-icon">🎨</div>
+                    <h3>Nail Art</h3>
+                    <p>Diseños a mano alzada, francesas modernas, efectos y decoraciones personalizadas.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- PROCESO -->
-    <section id="proceso" class="section section-soft">
+    <!-- GALERÍA (Placeholder structure) -->
+    <section id="galeria" class="section section-soft">
         <div class="container">
-            <h2 class="section-title animate">Cómo trabajo</h2>
+            <h2 class="section-title animate">Trabajos Recientes</h2>
 
-            <div class="grid-4">
-                <div class="step animate">
-                    <span>01</span>
-                    <p>Brief y objetivos</p>
+            <div class="gallery-grid">
+                <!-- Placeholder items - In real project, use real images -->
+                <div class="gallery-item animate">
+                    <div
+                        style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; color:white; background:#eba4b3;">
+                        <span>Diseño 1</span>
+                    </div>
                 </div>
-                <div class="step animate">
-                    <span>02</span>
-                    <p>Diseño visual</p>
+                <div class="gallery-item animate">
+                    <div
+                        style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; color:white; background:#b4aee8;">
+                        <span>Diseño 2</span>
+                    </div>
                 </div>
-                <div class="step animate">
-                    <span>03</span>
-                    <p>Desarrollo</p>
+                <div class="gallery-item animate">
+                    <div
+                        style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; color:white; background:#eba4b3;">
+                        <span>Diseño 3</span>
+                    </div>
                 </div>
-                <div class="step animate">
-                    <span>04</span>
-                    <p>Entrega final</p>
+                <div class="gallery-item animate">
+                    <div
+                        style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; color:white; background:#b4aee8;">
+                        <span>Diseño 4</span>
+                    </div>
                 </div>
+            </div>
+
+            <div class="text-center" style="margin-top: 40px;">
+                <a href="https://instagram.com" target="_blank" class="btn btn-secondary">Ver más en Instagram</a>
             </div>
         </div>
     </section>
 
     <!-- CTA -->
-    <section id="contacto" class="cta">
-        <div class="container cta-box animate">
-            <h2>¿Listo para tu landing page?</h2>
-            <p>Cuéntame tu idea y la transformamos en una página profesional.</p>
-            <a href="https://wa.me/56900000000" target="_blank" class="btn btn-primary">
-                Hablar por WhatsApp
-            </a>
+    <section id="contacto" class="section">
+        <div class="container animate">
+            <div class="cta-box">
+                <h2>¿Lista para brillar?</h2>
+                <p>Agenda tu hora y déjame consentir tus manos.</p>
+                <a href="https://wa.me/56900000000" target="_blank" class="btn btn-primary">
+                    Enviar mensaje por WhatsApp
+                </a>
+            </div>
         </div>
     </section>
 
     <!-- FOOTER -->
     <footer>
         <div class="container footer-content">
-            <p>© <span id="year"></span> Aline Galaz — Desarrolladora Web</p>
+            <p>© <span id="year"></span> Paloma Nails. Todos los derechos reservados.</p>
         </div>
     </footer>
 
     <!-- JS -->
     <script src="js/main.js"></script>
+
 </body>
 
 </html>
