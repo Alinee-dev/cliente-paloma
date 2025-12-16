@@ -31,11 +31,13 @@ body {
 }
 
 h1,
-h2,
-h3,
-.logo {
+ h2,
+ h3,
+ .logo {
     font-family: var(--font-heading);
-}/* UTILIDADES */
+ }
+
+/* UTILIDADES */
 .container {
     max-width: var(--container);
     margin: auto;
