@@ -48,7 +48,7 @@ if (yearEl) {
 }
 
 // ===============================
-// GALLERY CAROUSEL (FIX MOBILE)
+// GALLERY CAROUSEL
 // ===============================
 const galleryGrid = document.getElementById('galleryGrid');
 const galleryPrev = document.querySelector('.gallery-prev');
@@ -94,7 +94,6 @@ if (galleryGrid && galleryPrev && galleryNext) {
 // ===============================
 // GALERIA / LIGHTBOX
 // ===============================
-const galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
 const lightboxCaption = document.getElementById('lightbox-caption');
@@ -105,14 +104,12 @@ const btnNext = document.querySelector('.lightbox-next');
 let currentIndex = -1;
 
 function openLightbox(index) {
-    const item = galleryItems[index];
-    if (!item || !lightbox) return;
+    const items = document.querySelectorAll('.gallery-item');
+    if (index < 0 || index >= items.length) return;
 
+    const item = items[index];
     const full = item.dataset.full || item.querySelector('img')?.src;
-    const caption =
-        item.dataset.caption ||
-        item.querySelector('figcaption')?.textContent ||
-        '';
+    const caption = item.dataset.caption || '';
 
     currentIndex = index;
 
@@ -121,14 +118,10 @@ function openLightbox(index) {
     document.body.classList.add('lightbox-open');
 
     lightboxImg.src = '';
-    lightboxCaption.textContent = '';
     lightboxImg.alt = caption;
 
     const img = new Image();
-    img.onload = () => {
-        lightboxImg.src = img.src;
-        lightboxCaption.textContent = caption;
-    };
+    img.onload = () => lightboxImg.src = img.src;
     img.src = full;
 
     btnClose?.focus();
@@ -148,42 +141,32 @@ function showPrev() {
 }
 
 function showNext() {
-    if (currentIndex < galleryItems.length - 1) openLightbox(currentIndex + 1);
+    const items = document.querySelectorAll('.gallery-item');
+    if (currentIndex < items.length - 1) openLightbox(currentIndex + 1);
 }
 
-// Abrir lightbox
-galleryItems.forEach((item, index) => {
-    item.addEventListener('click', () => openLightbox(index));
-    item.addEventListener('keydown', e => {
-        if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            openLightbox(index);
-        }
-    });
+// Event Delegation
+document.querySelector('.gallery-container')?.addEventListener('click', e => {
+    const item = e.target.closest('.gallery-item');
+    if (item) {
+        const items = Array.from(document.querySelectorAll('.gallery-item'));
+        openLightbox(items.indexOf(item));
+    }
 });
 
 // Controles
 btnClose?.addEventListener('click', closeLightbox);
-btnPrev?.addEventListener('click', e => {
-    e.stopPropagation();
-    showPrev();
-});
-btnNext?.addEventListener('click', e => {
-    e.stopPropagation();
-    showNext();
-});
+btnPrev?.addEventListener('click', e => { e.stopPropagation(); showPrev(); });
+btnNext?.addEventListener('click', e => { e.stopPropagation(); showNext(); });
 
-// Cerrar al hacer click fuera
 lightbox?.addEventListener('click', e => {
-    if (e.target === lightbox || e.target === lightboxCaption) {
-        closeLightbox();
-    }
+    if (e.target === lightbox) closeLightbox();
 });
 
-// Teclado
 document.addEventListener('keydown', e => {
     if (!lightbox?.classList.contains('show')) return;
     if (e.key === 'Escape') closeLightbox();
     if (e.key === 'ArrowLeft') showPrev();
     if (e.key === 'ArrowRight') showNext();
 });
+

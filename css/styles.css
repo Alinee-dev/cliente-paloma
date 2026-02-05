@@ -35,7 +35,9 @@ h2,
 h3,
 .logo {
     font-family: var(--font-heading);
-}/* UTILIDADES */
+}
+
+/* UTILIDADES */
 .container {
     max-width: var(--container);
     margin: auto;
@@ -181,6 +183,8 @@ h3,
     display: inline-block;
 }
 
+
+
 .btn-primary {
     background: var(--primary);
     color: white;
@@ -320,7 +324,7 @@ h3,
     position: relative;
     overflow: hidden;
     border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
     cursor: zoom-in;
     flex: 0 0 240px;
     height: 320px;
@@ -340,12 +344,12 @@ h3,
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.5s cubic-bezier(.2,.8,.2,1), filter 0.35s ease;
+    transition: transform 0.5s cubic-bezier(.2, .8, .2, 1), filter 0.35s ease;
 }
 
 
 .gallery-item:focus {
-    outline: 3px solid rgba(235,164,179,0.25);
+    outline: 3px solid rgba(235, 164, 179, 0.25);
 }
 
 .gallery-item:hover img,
@@ -360,7 +364,7 @@ h3,
     right: 12px;
     bottom: 12px;
     color: white;
-    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 100%);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
     padding: 8px 12px;
     border-radius: 12px;
     font-weight: 600;
@@ -375,7 +379,7 @@ h3,
     display: none;
     align-items: center;
     justify-content: center;
-    background: rgba(0,0,0,0.7);
+    background: rgba(0, 0, 0, 0.7);
     z-index: 2000;
     padding: 24px;
 }
@@ -395,7 +399,7 @@ h3,
     max-width: 100%;
     max-height: 76vh;
     border-radius: 12px;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
     display: block;
     margin: 0 auto;
 }
@@ -404,7 +408,7 @@ h3,
 .lightbox-prev,
 .lightbox-next {
     position: absolute;
-    background: rgba(255,255,255,0.06);
+    background: rgba(255, 255, 255, 0.06);
     border: none;
     color: white;
     font-size: 28px;
@@ -413,13 +417,28 @@ h3,
     cursor: pointer;
 }
 
-.lightbox-close { top: 18px; right: 20px; }
-.lightbox-prev { left: 18px; top: 50%; transform: translateY(-50%); }
-.lightbox-next { right: 18px; top: 50%; transform: translateY(-50%); }
+.lightbox-close {
+    top: 18px;
+    right: 20px;
+}
+
+.lightbox-prev {
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.lightbox-next {
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+}
 
 .lightbox-close:hover,
 .lightbox-prev:hover,
-.lightbox-next:hover { background: rgba(255,255,255,0.12); }
+.lightbox-next:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
 
 #lightbox-caption {
     color: var(--text-muted);
@@ -428,7 +447,9 @@ h3,
 }
 
 /* Evitar scroll del body cuando lightbox abierto */
-body.lightbox-open { overflow: hidden; }
+body.lightbox-open {
+    overflow: hidden;
+}
 
 /* CTA / CONTACT */
 .cta-box {
@@ -468,7 +489,8 @@ footer {
 @media (min-width: 992px) {
     .logo {
         position: absolute;
-        left: 24px; /* separación desde el borde del viewport */
+        left: 24px;
+        /* separación desde el borde del viewport */
         z-index: 1100;
     }
 
